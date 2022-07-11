@@ -4,6 +4,10 @@ import Pokemon from "../views/Pokemon.vue";
 import Trainer from "../views/Trainer.vue";
 import Area from "../views/Area.vue";
 import Home from "../views/Home.vue";
+import SearchPokemon from "../components/pokemon/SearchPokemon.vue"
+import MakeTrainer from "../components/trainer/makeTrainer.vue"
+import GenerateTrainer from "../components/trainer/generateTrainer.vue"
+// import SearchPokemon from "../views/pokemon/SearchPokemon.vue"
 
 Vue.use(VueRouter);
 
@@ -14,14 +18,38 @@ const routes: Array<RouteConfig> = [
     component: Home
   },
   {
-    path: "/pokemon/generate",
+    path: "/pokemon",
     name: "pokemon",
-    component: Pokemon,
+    component:Pokemon,
+    children: [
+      {
+        path:"/pokemon/generate",
+        name:"generate_pokemon",
+        component: SearchPokemon
+      },
+      {
+        path:"/pokemon/make",
+        name:"make_pokemon",
+        component: Pokemon
+      }
+    ]
   },
   {
     path: "/trainer",
     name: "trainer",
     component: Trainer,
+    children: [
+      {
+        name: "make_trainer",
+        path: "/trainer/make",
+        component: MakeTrainer
+      },
+      {
+        name: "generate_trainer",
+        path: "/trainer/generate",
+        component: GenerateTrainer
+      }
+    ]
   },
   {
     path: "/area",

@@ -5,6 +5,19 @@ module.exports = defineConfig({
 
 module.exports = {
   devServer: {
-    proxy: 'https://pokeapi.co/api/v2/pokemon/',
+    proxy: 'http://localhost:5000',
   }
 }
+// module.exports = {
+//   devServer: {
+//     proxy: {
+//       '^/pokeapi': {
+//         target:'https://pokeapi.co/api/v2/pokemon/',
+//       },
+//       '^/backend':{
+//         target:'http://localhost:5000'
+//       }
+
+//     }
+//   }
+// }

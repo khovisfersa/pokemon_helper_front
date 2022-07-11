@@ -10,7 +10,11 @@ import VueAxios from 'vue-axios'
 Vue.config.productionTip = false;
 Vue.use(VueAxios, axios)
 
-// Vue.prototype.$http = axios
+Vue.prototype.$axios = axios;
+
+Vue.prototype.$api = "http://localhost:5000";
+// Vue.prototype.$pokeapi = "https://pokeapi.co/api/v2/pokemon/";
+
 
 
 const app = new Vue({

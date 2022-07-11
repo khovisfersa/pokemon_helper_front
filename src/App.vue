@@ -7,7 +7,7 @@
       <v-spacer></v-spacer>
 
       <v-btn color="transparent" to="/pokemon/generate">Pokemon</v-btn>
-      <v-btn color="transparent" to="/trainer/generate">Trainer</v-btn>
+      <v-btn color="transparent" to="/trainer">Trainer</v-btn>
       <v-btn color="transparent" to="/area">Area</v-btn>
     </v-app-bar>
 
@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import SearchPokemon from "./components/SearchPokemon.vue";
+import SearchPokemon from "./components/pokemon/SearchPokemon.vue";
 
 export default Vue.extend({
   name: "App",

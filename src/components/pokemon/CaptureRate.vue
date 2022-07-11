@@ -148,15 +148,10 @@ export default {
     calculateCaptureRate() {
       let newCaptureRate: number = 100;
       newCaptureRate = newCaptureRate - 2 * this.pokemon.level;
-      newCaptureRate =
-        newCaptureRate + this.calculateHpInfluenceInCaptureRate();
-      newCaptureRate =
-        newCaptureRate + this.calculateEvoStageInfluenceInCaptureRate();
-      newCaptureRate =
-        newCaptureRate + this.calculateRarityInfluenceInCaptureRate();
-      newCaptureRate = this.pokemon.is_shiny
-        ? newCaptureRate - 10
-        : newCaptureRate;
+      newCaptureRate = newCaptureRate + this.calculateHpInfluenceInCaptureRate();
+      newCaptureRate = newCaptureRate + this.calculateEvoStageInfluenceInCaptureRate();
+      newCaptureRate = newCaptureRate + this.calculateRarityInfluenceInCaptureRate();
+      newCaptureRate = this.pokemon.is_shiny ? newCaptureRate - 10 : newCaptureRate;
       // newCaptureRate =
       //   newCaptureRate + this.calculateAfflictionsInfluenceInCaptureRate();
       this.pokemon.capture_rate = newCaptureRate

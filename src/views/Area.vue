@@ -28,4 +28,4 @@ export default {
 };
 </script>
 
-<style lang="ts"></style>
+<style></style>

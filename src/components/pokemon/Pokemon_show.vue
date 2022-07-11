@@ -11,10 +11,10 @@
             <v-img
               class=""
               width="120"
-              :src="data.sprites.front_default"
+              :src="data"
             ></v-img>
           </div>
-          <PokemonStatus />
+          <PokemonStatus :stats=pokemon.stats />
         </v-card>
         <v-card class="mb-2">
           <v-card-text class="text-left"
@@ -29,7 +29,7 @@
         </v-card>
         <v-card>
           <v-card-title class="text-center">Moves</v-card-title>
-          <PokemonMove v-for="move in moves" :key="move" />
+          <PokemonMove v-for="move in pokemon.moves" :key="move" />
         </v-card>
       </div>
     </v-card>
@@ -59,17 +59,16 @@ export default {
       moves: [{}],
       img: null,
       data: {},
-      pokeapi: "https://pokeapi.co/api/v2/pokemon/",
-      data_api: "http://localhost:3000",
+      // pokeapi: "https://pokeapi.co/api/v2/pokemon/",
     };
   },
   mounted() {
     this.getPokemonData(this.pokemon.name);
   },
   methods: {
-    async getPokemonData(pokemon: string) {
+    async getPokemonData(pokemon: string) { 
       await axios
-        .get(this.pokeapi + pokemon)
+        .get(this.$api+"/pokemon/get_image/" + pokemon)
         .then((res) => {
           console.log(res.data);
           console.log("é possível que tenha dado certio");

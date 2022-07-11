@@ -11,12 +11,12 @@
           <p class="mb-0">spd:</p>
         </v-col>
         <v-col>
-          <p class="mb-0">{{ hp.base }} + {{ hp.added }} = {{ hp.final }}</p>
-          <p class="mb-0">{{ atk.base }} + {{ atk.added }} = {{ atk.final }}</p>
-          <p class="mb-0">{{ def.base }} + {{ def.added }} = {{ def.final }}</p>
-          <p class="mb-0">{{ sp_atk.base }} + {{ sp_atk.added }} = {{ sp_atk.final }}</p>
-          <p class="mb-0">{{ sp_def.base }} + {{ sp_def.added }} = {{ sp_def.final }}</p>
-          <p class="mb-0">{{ spd.base }} + {{ spd.added }} = {{ spd.final }}</p>
+          <p class="mb-0">{{stats[0]}}</p>
+          <p class="mb-0">{{stats[1]}}</p>
+          <p class="mb-0">{{stats[2]}}</p>
+          <p class="mb-0">{{stats[3]}}</p>
+          <p class="mb-0">{{stats[4]}}</p>
+          <p class="mb-0">{{stats[5]}}</p>
         </v-col>
       </v-row>
       <v-col class="text-left">
@@ -33,7 +33,7 @@
 <script lang="ts">
 export default {
   props: {
-    pokemon: {},
+    stats: [],
   },
   data() {
     return {
