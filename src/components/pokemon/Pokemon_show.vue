@@ -29,7 +29,7 @@
         </v-card>
         <v-card>
           <v-card-title class="text-center">Moves</v-card-title>
-          <PokemonMove v-for="move in pokemon.moves" :key="move" />
+          <PokemonMove v-for="move in pokemon.moves" :key="move" :move=move />
         </v-card>
       </div>
     </v-card>
